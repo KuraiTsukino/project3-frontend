@@ -7,9 +7,15 @@ import Header from './Header'
 export default function index() {
     return (
         <div>
-            <Header />
-            <Outlet />
+            <div class="flex flex-col h-screen justify-between">
+                <Header />
+
+            <main class="mb-auto">
+                <Outlet />
+            </main>
+
             <Footer />
+            </div>
         </div>
     )
 }
