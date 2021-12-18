@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
     return (
         <div>
-            Este es el Header
+            Este es el Header para netlify
         </div>
     )
 }
