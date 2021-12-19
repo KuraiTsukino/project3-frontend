@@ -37,12 +37,27 @@ const CountryState = (props) => {
         
     }
 
+    const getCountry = async (countryId) => {
+        
+        const res = await axiosClient.get(`countries/readone/${countryId}`)
+
+        const selectedCountry = res.data.data
+
+        dispatch({
+            type: "GET_COUNTRY",
+            payload: selectedCountry
+        })
+
+    }
+
     // 4. Retorno.
     return (
         <CountryContext.Provider
             value={{
                 countries: globalState.countries,
-                getCountries
+                singleCountry: globalState.singleCountry,
+                getCountries,
+                getCountry
             }}
         >
             {props.children}
