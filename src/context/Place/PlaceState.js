@@ -31,12 +31,14 @@ const PlaceState = (props) => {
     // 3. Funciones de cambio en el estado global
     const getPlaces = async () => {
         const res = await axiosClient.get("places/readall")
-
+        console.log(res);
+        
         const list = res.data.data
         dispatch({
             type: "GET_PLACES",
             payload: list,
         })
+       console.log(list);
     }
 
     const getPlace = async (placeId) => {

@@ -37,7 +37,7 @@ export default function Countries() {
 								countries.map(element => {
 									return (
 										<>
-											<div class="">
+											<div class="" style={{margin: 8}}>
 												<div class="rounded-lg bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
 													<Link to={`/countries/${element._id}`} >
 													<img src={element.flag} alt="Imagen de bandera" class="w-full h-full object-center object-cover" />

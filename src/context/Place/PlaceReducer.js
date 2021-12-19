@@ -10,10 +10,10 @@ const reducer = (globalState, action) => {
             }
 
         case "GET_PLACES":
-
+            
             return {
                 ...globalState,
-                countries: action.payload
+                places: action.payload
             }
     
         default:

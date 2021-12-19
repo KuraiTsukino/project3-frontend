@@ -12,7 +12,7 @@ export default function Places() {
   useEffect(() => {
     getPlaces();
   }, []);
-
+  
   return (
     <>
      <div className="max-w-7xl mx-auto my-8 px-4 sm:px-6 lg:px-8" >
@@ -25,6 +25,7 @@ export default function Places() {
 				</div>
 
 
+
 				<div class="bg-white">
 					<div>
 						<div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -32,6 +33,7 @@ export default function Places() {
 								places.map(element => {
 									return (
 										<>
+											<p>{element.name}</p>
 											<div class="">
 												<div class="rounded-lg bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
 													<Link to={`/places/${element._id}`} >
