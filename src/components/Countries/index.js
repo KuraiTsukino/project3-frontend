@@ -33,7 +33,6 @@ export default function Countries() {
 				<div class="bg-white">
 					<div>
 						<div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-
 							{
 								countries.map(element => {
 									return (

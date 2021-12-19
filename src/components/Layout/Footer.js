@@ -30,10 +30,10 @@ export default function Footer() {
 
           </div>
           <p className="mt-8 text-center text-base text-gray-400">
-            &copy; Tsukino Productions. 2021. Todos los derechos reservados.
+            &copy; Tsukino Productions. 2021. All rights reserved.
           </p>
           <p className="text-center text-base text-gray-400">
-            Esta es una aplicación de viajes ficticia con tendencia a la realidad.
+          This is a fictional travel app trending to reality.
           </p>
         </div>
       </footer>

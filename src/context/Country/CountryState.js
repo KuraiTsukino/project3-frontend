@@ -27,7 +27,6 @@ const CountryState = (props) => {
     // 3. Funciones de cambio en el estado global
     const getCountries = async () => {
         const res = await axiosClient.get("countries/readall")
-        console.log("Obteniendo los países...")
         
         const list = res.data.data
         dispatch({

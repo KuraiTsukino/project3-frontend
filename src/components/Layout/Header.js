@@ -11,18 +11,24 @@ export default function Header() {
               <div className="flex-shrink-0 flex items-center">
                 <img
                   className="block lg:hidden h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                  alt="Workflow"
+                  src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
+                  alt="logo"
                 />
                 <img
                   className="hidden lg:block h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
-                  alt="Workflow"/>
+                  src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
+                  alt="logo"/>
               </div>
               <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+                 <Link
+                  to="/"
+                  className="border-indigo-500 text-gray-900 inline-flex items-center px-2 pt-2 border-b-2 text-sm font-medium"
+                >
+                  Tsukino Travels
+                </Link>
                 <Link
                   to="/countries"
-                  className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                 >
                   Europe Countries
                 </Link>
@@ -114,29 +120,6 @@ export default function Header() {
               </button>
             </div>
             <div className="hidden lg:ml-4 lg:flex lg:items-center">
-              <button
-                type="button"
-                className="flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                <span className="sr-only">View notifications</span>
-
-                <svg
-                  className="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />
-                </svg>
-              </button>
-
               <div className="ml-4 relative flex-shrink-0">
                 <div>
                   <button
@@ -149,7 +132,7 @@ export default function Header() {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="https://cdn.aarp.net/content/dam/aarp/travel/travel_tips/2020/08/1140-globe-and-world-map-esp.jpg"
                       alt=""
                     />
                   </button>
