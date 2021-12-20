@@ -67,7 +67,7 @@ export default function Edit() {
   return (
     <>
       <form 
-        //onSubmit={ (event) => { handleSubmit(event) }}
+        //onSubmit={ (event) => { handleSubmit (event) }}
         class="space-y-8 divide-y mr-10 ml-10 divide-gray-200">
         <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">

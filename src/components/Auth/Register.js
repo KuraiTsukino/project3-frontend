@@ -36,18 +36,16 @@ export default function Register() {
         <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
-            className="mx-auto h-12 w-auto"
-            src="https://cdn.worldvectorlogo.com/logos/ironhack-1.svg"
+            className="mx-auto h-12 w-auto" alt='logo'
+            src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Crea tu cuenta
+            Create your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            ¿Ya tienes cuenta? &nbsp;
-            <Link to="/iniciar-sesion">
-              <a className="font-medium text-yellow-500 hover:text-yellow-300">
-                Inicia sesión.
-              </a>
+            Already has an account? &nbsp;
+            <Link to="/login" className="font-medium text-yellow-500 hover:text-yellow-300">
+                Login
             </Link>
           </p>
         </div>
@@ -62,17 +60,17 @@ export default function Register() {
             >
               <div>
                 <label
-                  for="password"
+                  for="name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Tu nombre completo
+                  Your Name
                 </label>
                 <div className="mt-1">
                   <input
                     onChange={(event) => {
                       handleChange(event);
                     }}
-                    name="nombre"
+                    name="name"
                     type="text"
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
@@ -84,7 +82,7 @@ export default function Register() {
                   for="email"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Tu correo electrónico
+                  Email
                 </label>
                 <div className="mt-1">
                   <input
@@ -103,7 +101,7 @@ export default function Register() {
                   for="password"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Tu contraseña
+                  Password
                 </label>
                 <div className="mt-1">
                   <input
@@ -123,7 +121,7 @@ export default function Register() {
                   for="password"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Confirma tu contraseña
+                  Confirm your password
                 </label>
                 <div className="mt-1">
                   <input
@@ -142,7 +140,7 @@ export default function Register() {
                   type="submit"
                   className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  Crear cuenta
+                  Create an account
                 </button>
               </div>
             </form>

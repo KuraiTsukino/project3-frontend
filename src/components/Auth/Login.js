@@ -29,83 +29,100 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <img
-          className="mx-auto h-12 w-auto"
-          src="https://cdn.worldvectorlogo.com/logos/ironhack-1.svg"
-          alt="Workflow"
-        />
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Iniciar sesión
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          ¿Aún sin cuenta? &nbsp;
-          <Link to="/registro">
-            <a className="font-medium text-yellow-500 hover:text-yellow-300">
-              Regístrate aquí.
-            </a>
-          </Link>
-        </p>
-      </div>
+    <>
+      <div className="min-h-full flex">
+        <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+          <div className="mx-auto w-full max-w-sm lg:w-96">
+            <div className="justify-items-center">
+              <img
+                className="h-12 mx-auto w-auto"
+                src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
+                alt="Icon"
+              />
+              <h2 className="mt-6 text-3xl text-center font-extrabold text-gray-900">
+                Sign in to your account
+              </h2>
+              <p className="mt-2 text-center text-sm text-gray-600">
+                Don't have an account &nbsp;
+                <Link
+                  to="/register"
+                  className="font-medium text-yellow-500 hover:text-yellow-300"
+                >
+                  Register here.
+                </Link>
+              </p>
+            </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form
-            className="space-y-6"
-            onSubmit={(e) => {
-              handleSubmit(e);
-            }}
-          >
-            <div>
-              <label
-                for="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Tu correo electrónico
-              </label>
-              <div className="mt-1">
-                <input
-                  onChange={(evt) => {
-                    handleChange(evt);
+            <div className="mt-8">
+              <div className="mt-6">
+                <form
+                  onSubmit={(e) => {
+                    handleSubmit(e);
                   }}
-                  name="email"
-                  type="email"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                />
+                  action="#"
+                  method="POST"
+                  className="space-y-6"
+                >
+                  <div>
+                    <label
+                      for="email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Email address
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        onChange={(evt) => {
+                          handleChange(evt);
+                        }}
+                        name="email"
+                        type="email"
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label
+                      for="password"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Password
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        onChange={(evt) => {
+                          handleChange(evt);
+                        }}
+                        name="password"
+                        type="password"
+                        required
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                      Sign in
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
-
-            <div>
-              <label
-                for="password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Tu contraseña
-              </label>
-              <div className="mt-1">
-                <input
-                  onChange={(evt) => {
-                    handleChange(evt);
-                  }}
-                  name="password"
-                  type="password"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                />
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Acceder a tu cuenta
-              </button>
-            </div>
-          </form>
+          </div>
+        </div>
+        <div className="hidden lg:block relative w-0 flex-1">
+          <img
+            className="absolute inset-0 h-full w-full object-cover"
+            src="https://tecnohotelnews.com/wp-content/uploads/2017/08/shutterstock_144112840.jpg"
+            alt=""
+          />
         </div>
       </div>
-    </div>
+    </>
   );
 }
