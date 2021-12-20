@@ -1,32 +1,26 @@
 // Importaciones
-import React, { useContext, useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
-import UserContext from '../context/User/UserContext'
+import React, { useContext, useEffect, useState } from "react";
 
-export default function PublicRoute({ component: Component, ...props}) {
+import { Navigate } from "react-router-dom";
 
-    const userCtx = useContext(UserContext)
+import UserContext from "../context/User/UserContext";
 
-    const { authStatus, verifyingToken } = userCtx
+export default function PublicRoute({ component: Component, ...props }) {
+  const userCtx = useContext(UserContext);
 
-    const [loading, setLoading] =useState(true)
+  const { authStatus, verifyingToken } = userCtx;
 
-    useEffect(async () => {
-        await verifyingToken()
-        setLoading(false)
-    
-    }, [authStatus])
+  const [loading, setLoading] = useState(true);
 
-        if(loading) return null
+  useEffect(() => {
+    const verifyStatus = async () => {
+      await verifyingToken();
+      return setLoading(false);
+    };
+    verifyStatus();
+  }, [authStatus]);
 
-    return (
-        <>
-            {
-                authStatus ?
-                (<Component />)
-                :
-                (<Navigate replace to="login" />)
-            }
-        </>
-    )
+  if (loading) return null;
+
+  return <>{authStatus ? <Component /> : <Navigate replace to="/login" />}</>;
 }

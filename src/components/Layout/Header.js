@@ -1,14 +1,15 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../context/User/UserContext";
 
 export default function Header() {
+  const ctx = useContext(UserContext);
 
-  const ctx = useContext(UserContext)
+  const { currentUser, verifyingToken, logoutUser } = ctx;
 
-  const {
-    logoutUser
-  } = ctx
+  useEffect(() => {
+    verifyingToken();
+  }, []);
 
   const [isOpen, setisOpen] = useState(false);
 
@@ -31,10 +32,11 @@ export default function Header() {
                 <img
                   className="hidden lg:block h-8 w-auto"
                   src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
-                  alt="logo"/>
+                  alt="logo"
+                />
               </div>
               <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-                 <Link
+                <Link
                   to="/"
                   className="border-indigo-500 text-gray-900 inline-flex items-center px-2 pt-2 border-b-2 text-sm font-medium"
                 >
@@ -154,37 +156,40 @@ export default function Header() {
                     />
                   </button>
                 </div>
-
-                <div
-                  className={`origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
-                          isOpen ? "block" : "hidden"
-                        } `}
-                        style={{ zIndex: "1" }}
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu-button"
-                  tabindex="-1"
-                >
-                  <Link
-                    to="/profile"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
+                {currentUser.firstName ? (
+                  <div
+                    className={`origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
+                      isOpen ? "block" : "hidden"
+                    } `}
+                    style={{ zIndex: "1" }}
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="user-menu-button"
                     tabindex="-1"
-                    id="user-menu-item-0"
                   >
-                    Your Profile
-                  </Link>
-                  <Link 
-                    to="/"
-                    onClick={() => logoutUser()}
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="user-menu-item-2"
-                  >
-                    Sign out
-                  </Link>
-                </div>
+                    <Link
+                      to={`profile/`}
+                      className="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-0"
+                    >
+                      Your Profile
+                    </Link>
+                    <Link
+                      to="/"
+                      onClick={() => logoutUser()}
+                      className="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-2"
+                    >
+                      Sign out
+                    </Link>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>

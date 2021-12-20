@@ -10,17 +10,21 @@ export default function AuthRoute({ component: Component, ...props}) {
 
     const[loading, setLoading] = useState(true)
 
-    useEffect(async () => {
+    useEffect( () => {
+      
+      const verifyingStatus = async () => {
         await verifyingToken()
-        setLoading(false)
+        return setLoading(false)
 
+      } 
+      verifyingStatus()
     }, [authStatus])
 
     return (
         <>
           {
             authStatus ?
-            (<Navigate replace to="/" />)
+            (<Navigate replace to="/profile" />)
             :
             (<Component />)
           }  

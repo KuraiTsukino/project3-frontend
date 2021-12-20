@@ -24,8 +24,8 @@ import CountryState from "./context/Country/CountryState";
 import PlaceState from "./context/Place/PlaceState";
 import UserState from "./context/User/UserState";
 
-//import Auth from "./routes/Auth";
-//import Private from "./routes/Private";
+import Auth from "./routes/Auth";
+import Private from "./routes/Private";
 
 // 2. Función
 const Router = () => {
@@ -39,7 +39,7 @@ const Router = () => {
                 <Route path="/" element={<Layout />}>
                   <Route index element={<Home />} />
                   <Route path="register" element={<Register />} />
-                  <Route path="login" element={<Login />} />
+                  <Route path="login" element={<Auth component= {Login} />} />
                   <Route path="about" element={<About />} />
                   <Route path="countries" element={<Countries />} />
                   <Route path="countries/:id" element={<SingleCountry />} />
@@ -47,7 +47,7 @@ const Router = () => {
                   <Route path="places/create" element={<CreatePlace />} />
                   <Route path="places/:id" element={<SinglePlace />} />
                   <Route path="places/:id/edit" element={<EditPlace />} />
-                  <Route path="profile" element={<Profile />} />
+                  <Route path="profile" element={<Private component= {Profile} />} />
                 </Route>
               </Routes>
             </BrowserRouter>
