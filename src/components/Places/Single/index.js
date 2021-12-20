@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 export default function SinglePlace() {
   const ctx = useContext(PlaceContext);
-  const { singlePlace, getPlace } = ctx;
+  const { singlePlace, getPlace, deletePlace } = ctx;
 
   const params = useParams();
   const id = params.id;
@@ -50,6 +50,13 @@ export default function SinglePlace() {
                   Edit Place
                 </button>
               </Link>
+              <button
+                 onClick={() => deletePlace(id)}
+                type="button"
+                class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Delete place
+              </button>
             </div>
           </div>
           <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
@@ -120,7 +127,7 @@ export default function SinglePlace() {
                   Map
                 </h2>
                 <div class="mt-6 flow-root">
-                  <img src={singlePlace.map} alt="imagen de mapa" />
+                  <iframe src={singlePlace.map} alt="imagen de mapa" />
                 </div>
                 <div class="mt-6 flex flex-col justify-stretch">
                   <Link to="/countries">

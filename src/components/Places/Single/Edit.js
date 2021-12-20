@@ -31,11 +31,11 @@ export default function Edit() {
 
   // useEffect para actualizar los datos del estado global estado local
   useEffect(() => {
+    
     const { country, name, type, schedule, price, image, description, map } =
       ctx.singlePlace;
 
-    setPlaceData(
-      {
+    setPlaceData({
         country: country,
         name: name,
         type: type,
@@ -44,30 +44,28 @@ export default function Edit() {
         image: image,
         description: description,
         map: map,
-      },
-      [singlePlace]
-    );
-
-    const handleChange = (e) => {
-      e.preventDefault();
-
-      setPlaceData({
-        ...placeData,
-        [e.target.name]: e.target.value,
       })
-    }
+  }, [singlePlace]);
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
+  const handleChange = (e) => {
+    e.preventDefault();
 
-      updatePlace(placeData, idPlace)
-    };
-  });
+    setPlaceData({
+      ...placeData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    updatePlace(placeData, idPlace)
+  };
 
   return (
     <>
       <form 
-        //onSubmit={ (event) => { handleSubmit (event) }}
+        onSubmit={(event) =>  handleSubmit(event)}
         class="space-y-8 divide-y mr-10 ml-10 divide-gray-200">
         <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
@@ -89,7 +87,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="country"
                     value= {placeData.country}
@@ -107,7 +105,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="name"
                     value={placeData.name}
@@ -125,7 +123,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="type"
                     value={placeData.type}
@@ -143,7 +141,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="price"
                     value={placeData.price}
@@ -161,7 +159,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="image"
                     value={placeData.image}
@@ -179,7 +177,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="description"
                     value={placeData.description}
@@ -197,7 +195,7 @@ export default function Edit() {
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    //onChange={ (event) => { handleChange(event) } } 
+                    onChange={ (event) => { handleChange(event) } } 
                     type="text"
                     name="map"
                     value={placeData.map}

@@ -54,6 +54,7 @@ const PlaceState = (props) => {
 
     const createPlace = async (form) => {
         const res = await axiosClient.post("places/create", form)
+        console.log(res)
     }
 
     const updatePlace = async (form, idPlace) => {
@@ -69,6 +70,10 @@ const PlaceState = (props) => {
 
     }
 
+    const deletePlace = async (idPlace) => {
+        const res = await axiosClient.delete(`places/delete/${idPlace}`)
+    }
+
     return (
         <PlaceContext.Provider
             value={{
@@ -77,7 +82,8 @@ const PlaceState = (props) => {
                 getPlaces,
                 getPlace,
                 createPlace,
-                updatePlace
+                updatePlace,
+                deletePlace
             }}
         >
             {props.children}

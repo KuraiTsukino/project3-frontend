@@ -1,7 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
+
+  const { Countries, Places } = props 
+
+  const [searchValue, setSearchValue] = useState('')
+  function handleChange(event){
+    event.preventDefault()
+    setSearchValue(event.target.value)
+    
+  }
+
+  const [isOpen, setisOpen] = useState(false);
+
+  const handleProfileButton = () => {
+    setisOpen(!isOpen);
+  };
+
   return (
     <>
       <nav className="bg-white shadow">
@@ -68,6 +84,7 @@ export default function Header() {
                     </svg>
                   </div>
                   <input
+                    onChange={(e) => handleChange(e)}
                     id="search"
                     name="search"
                     className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -79,10 +96,12 @@ export default function Header() {
             </div>
             <div className="flex items-center lg:hidden">
               <button
+                onClick={() => handleProfileButton()}
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
+                aria-haspopup="true"
               >
                 <span className="sr-only">Open main menu</span>
 
@@ -139,7 +158,10 @@ export default function Header() {
                 </div>
 
                 <div
-                  className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  className={`origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
+                          isOpen ? "block" : "hidden"
+                        } `}
+                        style={{ zIndex: "1" }}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu-button"
