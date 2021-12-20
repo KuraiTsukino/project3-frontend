@@ -1,16 +1,14 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../../context/User/UserContext";
 
-export default function Header(props) {
+export default function Header() {
 
-  const { Countries, Places } = props 
+  const ctx = useContext(UserContext)
 
-  const [searchValue, setSearchValue] = useState('')
-  function handleChange(event){
-    event.preventDefault()
-    setSearchValue(event.target.value)
-    
-  }
+  const {
+    logoutUser
+  } = ctx
 
   const [isOpen, setisOpen] = useState(false);
 
@@ -84,7 +82,6 @@ export default function Header(props) {
                     </svg>
                   </div>
                   <input
-                    onChange={(e) => handleChange(e)}
                     id="search"
                     name="search"
                     className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -142,6 +139,7 @@ export default function Header(props) {
               <div className="ml-4 relative flex-shrink-0">
                 <div>
                   <button
+                    onClick={() => handleProfileButton()}
                     type="button"
                     className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     id="user-menu-button"
@@ -177,7 +175,8 @@ export default function Header(props) {
                     Your Profile
                   </Link>
                   <Link 
-                    to="#"
+                    to="/"
+                    onClick={() => logoutUser()}
                     className="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"

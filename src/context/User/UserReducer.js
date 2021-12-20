@@ -11,6 +11,16 @@ const reducer = (globalState, action) => {
                 ...globalState,
                 authStatus: true
             }
+
+        case "LOGOUT_USER":
+            localStorage.removeItem("token")
+
+            return {
+                ...globalState,
+                user: null,
+                authStatus: null,
+                msg: action.payload
+            }
         
         case "GET_DATA_USER":
 
