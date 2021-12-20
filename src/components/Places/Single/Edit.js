@@ -9,7 +9,7 @@ export default function Edit() {
 
   const ctx = useContext(PlaceContext);
 
-  const { singlePlace, getPlace, updateGuitar } = ctx;
+  const { singlePlace, getPlace, updatePlace } = ctx;
 
   // 2. Estado local.
   const [placeData, setPlaceData] = useState({
@@ -54,13 +54,13 @@ export default function Edit() {
       setPlaceData({
         ...placeData,
         [e.target.name]: e.target.value,
-      });
-    };
+      })
+    }
 
     const handleSubmit = (e) => {
       e.preventDefault();
 
-      //updatePlace(placeData, idPlace)
+      updatePlace(placeData, idPlace)
     };
   });
 
@@ -82,7 +82,7 @@ export default function Edit() {
             <div class="space-y-6 sm:space-y-5">
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="first-name"
+                  for="country"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Country of the place
@@ -91,9 +91,8 @@ export default function Edit() {
                   <input
                     //onChange={ (event) => { handleChange(event) } } 
                     type="text"
-                    name="first-name"
-                    id="first-name"
-                    autocomplete="given-name"
+                    name="country"
+                    value= {placeData.country}
                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -101,17 +100,17 @@ export default function Edit() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="last-name"
+                  for="name"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Name of the place
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
+                    //onChange={ (event) => { handleChange(event) } } 
                     type="text"
-                    name="last-name"
-                    id="last-name"
-                    autocomplete="family-name"
+                    name="name"
+                    value={placeData.name}
                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -119,17 +118,17 @@ export default function Edit() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="email"
+                  for="type"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Type of attraction
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
+                    //onChange={ (event) => { handleChange(event) } } 
+                    type="text"
+                    name="type"
+                    value={placeData.type}
                     class="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -137,17 +136,17 @@ export default function Edit() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="country"
+                  for="price"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Price in local currency
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
+                    //onChange={ (event) => { handleChange(event) } } 
                     type="text"
-                    name="last-name"
-                    id="last-name"
-                    autocomplete="family-name"
+                    name="price"
+                    value={placeData.price}
                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -155,17 +154,17 @@ export default function Edit() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="street-address"
+                  for="image"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Image of the place
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
+                    //onChange={ (event) => { handleChange(event) } } 
                     type="text"
-                    name="street-address"
-                    id="street-address"
-                    autocomplete="street-address"
+                    name="image"
+                    value={placeData.image}
                     class="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -173,17 +172,17 @@ export default function Edit() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="city"
+                  for="description"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Your description. Why is interesting this place?
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
+                    //onChange={ (event) => { handleChange(event) } } 
                     type="text"
-                    name="city"
-                    id="city"
-                    autocomplete="address-level2"
+                    name="description"
+                    value={placeData.description}
                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
@@ -191,17 +190,17 @@ export default function Edit() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="region"
+                  for="map"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Map
                 </label>
                 <div class="mt-1 sm:mt-0 sm:col-span-2">
                   <input
+                    //onChange={ (event) => { handleChange(event) } } 
                     type="text"
-                    name="region"
-                    id="region"
-                    autocomplete="address-level1"
+                    name="map"
+                    value={placeData.map}
                     class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>

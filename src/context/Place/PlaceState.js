@@ -52,13 +52,32 @@ const PlaceState = (props) => {
         })
     }
 
+    const createPlace = async (form) => {
+        const res = await axiosClient.post("places/create", form)
+    }
+
+    const updatePlace = async (form, idPlace) => {
+
+        const res = await axiosClient.put(`places/edit/${idPlace}`, form)
+
+        const updatedPlace = res.data.data
+
+        dispatch({
+            type: "UPDATE_PLACE",
+            payload: updatedPlace
+        })
+
+    }
+
     return (
         <PlaceContext.Provider
             value={{
                 places: globalState.places,
                 singlePlace: globalState.singlePlace,
                 getPlaces,
-                getPlace
+                getPlace,
+                createPlace,
+                updatePlace
             }}
         >
             {props.children}
