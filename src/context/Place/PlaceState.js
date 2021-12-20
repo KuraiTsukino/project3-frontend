@@ -38,15 +38,14 @@ const PlaceState = (props) => {
             type: "GET_PLACES",
             payload: list,
         })
-       console.log(list);
     }
 
     const getPlace = async (placeId) => {
 
         const res = await axiosClient.get(`places/readone/${placeId}`)
-
+        console.log(res)
         const selectedPlace = res.data.data
-
+        console.log(selectedPlace);
         dispatch({
             type: "GET_PLACE",
             payload: selectedPlace

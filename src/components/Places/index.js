@@ -33,8 +33,7 @@ export default function Places() {
 								places.map(element => {
 									return (
 										<>
-											<p>{element.name}</p>
-											<div class="">
+											<div class="" style={{margin: 8}}>
 												<div class="rounded-lg bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
 													<Link to={`/places/${element._id}`} >
 													<img src={element.image} alt="Imagen de lugar" class="w-full h-full object-center object-cover" />
