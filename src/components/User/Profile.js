@@ -101,7 +101,7 @@ export default function Profile() {
                         {currentUser.email}
                       </dd>
                     </div>
-
+                    {/*
                     <div class="sm:col-span-2">
                       <dt class="text-sm font-medium text-gray-500">
                         Wish list
@@ -114,7 +114,7 @@ export default function Profile() {
                           posuere aliquam.
                         </p>
                       </dd>
-                    </div>
+                    </div>*/}
                   </dl>
                 </div>
               </article>

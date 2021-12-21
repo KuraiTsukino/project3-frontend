@@ -1,5 +1,5 @@
-import React, { useState, useContext} from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import PlaceContext from "../../context/Place/PlaceContext";
 
 export default function Create() {
@@ -12,8 +12,6 @@ export default function Create() {
         createPlace
     } = ctx
 
-    console.log(createPlace)
-
     // 2. Estado local
     const [newPlace, setNewPlace] = useState({
         country: "",
@@ -25,6 +23,8 @@ export default function Create() {
         description: "",
         map: ""
     })
+    // Para redireccionar 
+    const navigate = useNavigate()
 
     // 3. Funciones
     const handleChange = (e) => {
@@ -40,6 +40,7 @@ export default function Create() {
         e.preventDefault()
 
         createPlace(newPlace)
+        navigate("/places")
     }
 
   return (

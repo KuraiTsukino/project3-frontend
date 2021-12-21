@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import UserContext from "../../context/User/UserContext";
 
 export default function EditProfile() {
@@ -10,6 +10,8 @@ export default function EditProfile() {
   const ctx = useContext(UserContext);
 
   const { currentUser, updateUser } = ctx;
+
+  const navigate = useNavigate()
 
   // 2. Estado local.
   const [userData, setUserData] = useState({
@@ -52,6 +54,7 @@ export default function EditProfile() {
     e.preventDefault();
 
     updateUser(userData, idUser);
+    navigate("/profile")
   };
 
   return (
@@ -156,12 +159,14 @@ export default function EditProfile() {
 
         <div class="pt-5">
           <div class="flex justify-end">
+          <Link to="/profile">
             <button
               type="button"
               class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Cancel
+              Back to Profile
             </button>
+            </Link>
             <button
               type="submit"
               class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

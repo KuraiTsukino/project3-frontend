@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import PlaceContext from "../../../context/Place/PlaceContext";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 export default function SinglePlace() {
   const ctx = useContext(PlaceContext);
@@ -50,6 +50,7 @@ export default function SinglePlace() {
                   Edit Place
                 </button>
               </Link>
+              <Link to="/places">
               <button
                  onClick={() => deletePlace(id)}
                 type="button"
@@ -57,6 +58,7 @@ export default function SinglePlace() {
               >
                 Delete place
               </button>
+              </Link>
             </div>
           </div>
           <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">

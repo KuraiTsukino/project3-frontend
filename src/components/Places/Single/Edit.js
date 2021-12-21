@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import PlaceContext from "./../../../context/Place/PlaceContext";
 
 export default function Edit() {
@@ -10,6 +10,8 @@ export default function Edit() {
   const ctx = useContext(PlaceContext);
 
   const { singlePlace, getPlace, updatePlace } = ctx;
+
+  const navigate = useNavigate()
 
   // 2. Estado local.
   const [placeData, setPlaceData] = useState({
@@ -60,6 +62,7 @@ export default function Edit() {
     e.preventDefault();
 
     updatePlace(placeData, idPlace)
+    navigate("/places")
   };
 
   return (
