@@ -16,6 +16,7 @@ const CountryState = (props) => {
            name: "",
            flag: "",
            currency: "",
+           language: "",
            airports: "",
            image: ""
         }

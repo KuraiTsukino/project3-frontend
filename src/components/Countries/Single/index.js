@@ -58,15 +58,22 @@ export default function SingleCountry() {
                         <dd className="mt-1 text-sm text-gray-900">
                           {singleCountry.currency}
                         </dd>
+                        <br />
+                        <dt className="text-sm font-medium text-gray-500">
+                          Language
+                        </dt>
+                        <dd className="mt-1 text-sm text-gray-900">
+                          {singleCountry.language}
+                        </dd>
                       </div>
                       <div className="sm:col-span-1">
                         <dt className="text-sm font-medium text-gray-500">
                           Airports
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          <ul>
+                          <ol>
                           <li>{singleCountry.airports}</li>
-                          </ul>
+                          </ol>
                         </dd>
                       </div>
 

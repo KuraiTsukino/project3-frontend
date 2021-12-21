@@ -22,5 +22,5 @@ export default function PublicRoute({ component: Component, ...props }) {
 
   if (loading) return null;
 
-  return <>{authStatus ? <Component /> : <Navigate replace to="/login" />}</>;
+  return <>{authStatus ? <Component /> : <Navigate replace to="/" />}</>;
 }

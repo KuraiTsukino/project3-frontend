@@ -24,16 +24,13 @@ export default function Header() {
           <div className="flex justify-between h-16">
             <div className="flex px-2 lg:px-0">
               <div className="flex-shrink-0 flex items-center">
-                <img
-                  className="block lg:hidden h-8 w-auto"
-                  src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
-                  alt="logo"
-                />
+              <Link to="/">
                 <img
                   className="hidden lg:block h-8 w-auto"
                   src="https://cdn-icons-png.flaticon.com/512/2060/2060284.png"
                   alt="logo"
                 />
+              </Link>
               </div>
               <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                 <Link
@@ -125,11 +122,19 @@ export default function Header() {
                     aria-haspopup="true"
                   >
                     <span className="sr-only">Open user menu</span>
+                    {currentUser.imgUrl ? (
                     <img
                       className="h-8 w-8 rounded-full"
-                      src="https://cdn.aarp.net/content/dam/aarp/travel/travel_tips/2020/08/1140-globe-and-world-map-esp.jpg"
+                      src={currentUser.imgUrl}
                       alt=""
                     />
+                    ) : (
+                      <img
+                      className="h-8 w-8 rounded-full"
+                      src="https://i.pinimg.com/originals/eb/4d/f1/eb4df1d493f244dd6bca2ff121879372.png"
+                      alt=""
+                      />
+                    ) }
                   </button>
                 </div>
                 {currentUser.firstName ? (
