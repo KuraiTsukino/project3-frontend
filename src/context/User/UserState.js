@@ -96,7 +96,8 @@ const UserState = (props) => {
         registerUser,
         loginUser,
         verifyingToken,
-        logoutUser
+        logoutUser,
+        updateUser
       }}
     >
       {props.children}
