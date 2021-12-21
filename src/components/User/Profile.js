@@ -9,7 +9,6 @@ export default function Profile() {
 
   const params = useParams()
   const id = currentUser._id
-  console.log(currentUser)
 
   useEffect(() => {
     verifyingToken()

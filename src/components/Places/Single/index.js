@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import PlaceContext from "../../../context/Place/PlaceContext";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function SinglePlace() {
   const ctx = useContext(PlaceContext);
@@ -13,7 +13,6 @@ export default function SinglePlace() {
     getPlace(id);
   }, []);
 
-  console.log(singlePlace);
   return (
     <>
       <div class="min-h-full">
@@ -129,7 +128,7 @@ export default function SinglePlace() {
                   Map
                 </h2>
                 <div class="mt-6 flow-root">
-                  <iframe src={singlePlace.map} alt="imagen de mapa" />
+                  <iframe src={singlePlace.map} alt="imagen de mapa" style= {{width:"600", height:"450", border:"0"}} allowfullscreen="" loading="lazy" />
                 </div>
                 <div class="mt-6 flex flex-col justify-stretch">
                   <Link to="/countries">

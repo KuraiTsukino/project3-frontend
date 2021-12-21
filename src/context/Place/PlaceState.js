@@ -31,7 +31,6 @@ const PlaceState = (props) => {
     // 3. Funciones de cambio en el estado global
     const getPlaces = async () => {
         const res = await axiosClient.get("places/readall")
-        console.log(res);
         
         const list = res.data.data
         dispatch({
@@ -43,9 +42,9 @@ const PlaceState = (props) => {
     const getPlace = async (placeId) => {
 
         const res = await axiosClient.get(`places/readone/${placeId}`)
-        console.log(res)
+
         const selectedPlace = res.data.data
-        console.log(selectedPlace);
+
         dispatch({
             type: "GET_PLACE",
             payload: selectedPlace
@@ -54,7 +53,7 @@ const PlaceState = (props) => {
 
     const createPlace = async (form) => {
         const res = await axiosClient.post("places/create", form)
-        console.log(res)
+
     }
 
     const updatePlace = async (form, idPlace) => {

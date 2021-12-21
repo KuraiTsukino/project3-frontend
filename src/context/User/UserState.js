@@ -70,9 +70,11 @@ const UserState = (props) => {
   };
 
   const logoutUser = async () => {
+  
     dispatch({
       type: "LOGOUT_USER"
     })
+  
   }
 
   const updateUser = async (form, idUser) => {

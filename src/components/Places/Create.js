@@ -6,7 +6,6 @@ export default function Create() {
 
     // 1. Estado global
     const ctx = useContext(PlaceContext)
-    console.log(ctx)
     
     const {
         createPlace
