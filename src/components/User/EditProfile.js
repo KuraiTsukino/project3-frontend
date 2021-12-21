@@ -23,7 +23,7 @@ export default function EditProfile() {
   // useEffect para actualizar datos en el estado global
   useEffect(() => {
     updateUser(idUser)
-    
+
   }, [])
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function EditProfile() {
             <div class="space-y-6 sm:space-y-5">
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="country"
+                  for="firstName"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Your First Name
@@ -97,7 +97,7 @@ export default function EditProfile() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="name"
+                  for="lastName"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Your Last Name
@@ -117,7 +117,7 @@ export default function EditProfile() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="type"
+                  for="country"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Country where you live
@@ -137,7 +137,7 @@ export default function EditProfile() {
 
               <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                 <label
-                  for="price"
+                  for="image"
                   class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                 >
                   Your image profile

@@ -8,7 +8,6 @@ export default function Register() {
 
     const {
         registerUser,
-        msg
     } = ctx
 
     const [newUser, setNewUser] = useState({
@@ -17,6 +16,7 @@ export default function Register() {
         password: "",
         confirmpassword: ""
     })
+    console.log(newUser)
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -71,7 +71,7 @@ export default function Register() {
                     onChange={(event) => {
                       handleChange(event);
                     }}
-                    name="name"
+                    name="firstName"
                     type="text"
                     required
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -138,11 +138,6 @@ export default function Register() {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-between">
-                    <div className="text-sm font-medium text-red-500">
-                      {msg && <p>{msg}</p>}
-                    </div>
-                  </div>
               <div>
                 <button
                   type="submit"

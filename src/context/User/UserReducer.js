@@ -11,13 +11,6 @@ const reducer = (globalState, action) => {
                 ...globalState,
                 authStatus: true
             }
-        
-        case "REGISTER_ERROR":
-            return {
-                ...globalState,
-                authStatus: false,
-                msg: action.payload,
-            }
 
         case "UPDATE_USER":
             return {

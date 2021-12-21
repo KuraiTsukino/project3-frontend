@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 
 import UserReducer from "./UserReducer";
 import UserContext from "./UserContext";
@@ -17,7 +17,6 @@ const UserState = (props) => {
       wishList: [],
     },
     authStatus: false,
-    msg: "",
   };
 
   // 2. Configuración del reducer.
@@ -25,25 +24,17 @@ const UserState = (props) => {
 
   // 3. Funciones
   const registerUser = async (form) => {
-    const res = await axiosClient.post("users/create", form);
+    const res = await axiosClient.post("users/create", form)
 
-    console.log(res);
+    console.log(res)
 
-    const token = res.data.data;
-    const msg = res.data.msg
-    if(msg) {
-      dispatch({
-        type: "REGISTER_ERROR",
-        payload: msg,
-      })
-    } else {
-      dispatch({
-        type: "REGISTER_SUCCESS",
-        payload: token,
+    const token = res.data.data
 
-      })
-    }
-  };
+    dispatch({
+      type: "REGISTER_SUCCESS",
+      payload: token
+    })
+  }
 
   const loginUser = async (form) => {
     const res = await axiosClient.post("users/login", form);
@@ -102,7 +93,6 @@ const UserState = (props) => {
       value={{
         currentUser: globalState.currentUser,
         authStatus: globalState.authStatus,
-        msg: globalState.msg,
         registerUser,
         loginUser,
         verifyingToken,

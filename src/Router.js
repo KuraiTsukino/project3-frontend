@@ -40,7 +40,7 @@ const Router = () => {
               <Routes>
                 <Route path="/" element={<Layout />}>
                   <Route index element={<Home />} />
-                  <Route path="register" element={<Register />} />
+                  <Route path="register" element={<Auth component={Register} />} />
                   <Route path="login" element={<Auth component= {Login} />} />
                   <Route path="about" element={<About />} />
                   <Route path="countries" element={<Countries />} />
