@@ -16,7 +16,6 @@ export default function Register() {
         password: "",
         confirmpassword: ""
     })
-    console.log(newUser)
 
     const handleChange = (e) => {
         e.preventDefault()

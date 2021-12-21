@@ -26,8 +26,6 @@ const UserState = (props) => {
   const registerUser = async (form) => {
     const res = await axiosClient.post("users/create", form)
 
-    console.log(res)
-
     const token = res.data.data
 
     dispatch({
