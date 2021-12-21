@@ -8,7 +8,7 @@ export default function Profile() {
   const { currentUser, verifyingToken } = ctx;
 
   const params = useParams()
-  const id = params._id
+  const id = currentUser._id
   console.log(currentUser)
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function Profile() {
                         </div>
                         <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
                           {currentUser.firstName ? (
-                            <Link to={`edit`}>
+                            <Link to={`edit/${id}`}>
                               <button
                                 type="button"
                                 class="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"

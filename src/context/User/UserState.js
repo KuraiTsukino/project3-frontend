@@ -77,6 +77,16 @@ const UserState = (props) => {
     })
   }
 
+  const updateUser = async (form, idUser) => {
+    const res = axiosClient.put(`users/edit/${idUser}`, form)
+    const updatedUser = (await res).data.data
+
+    dispatch({
+      type: "UPDATE_USER",
+      payload: updatedUser
+    })
+  }
+
   // 4. Retorno.
   return (
     <UserContext.Provider

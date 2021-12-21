@@ -21,20 +21,7 @@ export default function EditProfile() {
 
   // 3. Funciones.
   // useEffect para actualizar datos en el estado global
-  useEffect(() => {
-    updateUser(idUser);
-  }, []);
 
-  useEffect(() => {
-    const { firstName, lastName, country, imgUrl } = ctx.updateUser;
-
-    setUserData({
-      firstName: firstName,
-      lastName: lastName,
-      country: country,
-      imgUrl: imgUrl,
-    });
-  }, [updateUser]);
 
   const handleChange = (e) => {
     e.preventDefault();

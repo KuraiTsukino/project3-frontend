@@ -50,7 +50,7 @@ const Router = () => {
                   <Route path="places/:id" element={<SinglePlace />} />
                   <Route path="places/:id/edit" element={<EditPlace />} />
                   <Route path="profile" element={<Private component= {Profile} />} />
-                  <Route path="profile/edit" element={<EditProfile />} />
+                  <Route path="profile/edit/:id" element={<EditProfile />} />
                 </Route>
               </Routes>
             </BrowserRouter>
