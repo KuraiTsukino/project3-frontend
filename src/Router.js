@@ -6,11 +6,13 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import Layout from "./components/Layout";
 import Home from "./components/Home";
+import About from "./components/About";
 
 import Register from "./components/Auth/Register";
-import About from "./components/About";
 import Login from "./components/Auth/Login";
+
 import Profile from "./components/User/Profile";
+import EditProfile from "./components/User/EditProfile";
 
 import Countries from "./components/Countries";
 import SingleCountry from "./components/Countries/Single";
@@ -48,6 +50,7 @@ const Router = () => {
                   <Route path="places/:id" element={<SinglePlace />} />
                   <Route path="places/:id/edit" element={<EditPlace />} />
                   <Route path="profile" element={<Private component= {Profile} />} />
+                  <Route path="profile/edit" element={<EditProfile />} />
                 </Route>
               </Routes>
             </BrowserRouter>
