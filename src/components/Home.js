@@ -39,7 +39,7 @@ export default function Home() {
           </div>
           <div className="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
             <img
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute rounded-lg inset-0 w-full h-full object-cover"
               src="https://d1bvpoagx8hqbg.cloudfront.net/originals/frases-viajes-afb3e3b620ae87357c63946c05ed0ddb.jpg"
               alt=""
             />
