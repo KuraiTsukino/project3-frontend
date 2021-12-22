@@ -15,7 +15,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              Travel to Europe and know the most interesting places to visit.  Leave your comment.
+              Travel to Europe and know the most interesting places to visit. 
               </p>
               <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">

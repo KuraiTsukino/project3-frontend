@@ -44,6 +44,7 @@ export default function Places() {
                         <Link to={`/places/${element._id}`}>
                           <img
                             src={element.image}
+                            style={{ height: "200px" }}
                             alt="Imagen de lugar"
                             class="w-full h-full object-center object-cover"
                           />

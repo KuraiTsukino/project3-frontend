@@ -51,7 +51,7 @@ export default function SinglePlace() {
               </Link>
               <Link to="/places">
               <button
-                 onClick={() => deletePlace(id)}
+                onClick={() => deletePlace(id)}
                 type="button"
                 class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
@@ -128,7 +128,7 @@ export default function SinglePlace() {
                   Map
                 </h2>
                 <div class="mt-6 flow-root">
-                  <iframe src={singlePlace.map} alt="imagen de mapa" style= {{width:"600", height:"450", border:"0"}} allowfullscreen="" loading="lazy" />
+                  <iframe title="título de mapa" src={singlePlace.map} alt="imagen de mapa" style= {{width:"600", height:"500", border:"0"}} allowfullscreen="" loading="lazy" />
                 </div>
                 <div class="mt-6 flex flex-col justify-stretch">
                   <Link to="/countries">

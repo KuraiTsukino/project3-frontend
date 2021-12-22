@@ -40,7 +40,7 @@ export default function Countries() {
 											<div class="" style={{margin: 8}}>
 												<div class="rounded-lg bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
 													<Link to={`/countries/${element._id}`} >
-													<img src={element.flag} alt="Imagen de bandera" class="w-full h-full object-center object-cover" />
+													<img src={element.flag} style={{ height: "200px", border: "1px solid black" }}alt="Imagen de bandera" class="w-full h-full object-center object-cover" />
 													</Link>
 												</div>
 												<div class="pt-10 pb-4 text-center">

@@ -67,7 +67,7 @@ export default function SingleCountry() {
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
-                        <dt className="text-sm font-medium text-gray-500">
+                        <dt className="text-sm airport font-medium text-gray-500">
                           Airports
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">

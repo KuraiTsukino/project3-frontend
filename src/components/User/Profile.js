@@ -100,20 +100,6 @@ export default function Profile() {
                         {currentUser.email}
                       </dd>
                     </div>
-                    {/*
-                    <div class="sm:col-span-2">
-                      <dt class="text-sm font-medium text-gray-500">
-                        Wish list
-                      </dt>
-                      <dd class="mt-1 max-w-prose text-sm text-gray-900 space-y-5">
-                        <p>
-                          Tincidunt quam neque in cursus viverra orci, dapibus
-                          nec tristique. Nullam ut sit dolor consectetur urna,
-                          dui cras nec sed. Cursus risus congue arcu aenean
-                          posuere aliquam.
-                        </p>
-                      </dd>
-                    </div>*/}
                   </dl>
                 </div>
               </article>
