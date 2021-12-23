@@ -46,6 +46,7 @@ export default function Places() {
                             src={element.image}
                             style={{ height: "200px" }}
                             alt="Imagen de lugar"
+                            style={{ height: "200px", border: "1px solid black" }}
                             class="w-full h-full rounded-lg object-center object-cover"
                           />
                         </Link>
