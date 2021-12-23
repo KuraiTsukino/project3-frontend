@@ -25,6 +25,7 @@ export default function SingleCountry() {
                     className="h-28 w-30 rounded"
                     src={singleCountry.flag}
                     alt="bandera de país"
+                    style={{ height: "200px", border: "1px solid black" }}
                   />
                 </div>
               </div>
