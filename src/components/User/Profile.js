@@ -26,7 +26,6 @@ export default function Profile() {
             class="fixed inset-0 bg-gray-600 bg-opacity-75"
             aria-hidden="true"
           ></div>
-
           <div class="flex-shrink-0 w-14" aria-hidden="true"></div>
         </div>
         <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
@@ -86,14 +85,12 @@ export default function Profile() {
                     </div>
                   </div>
                 </div>
-
                 <div class="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                   <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                     <div class="sm:col-span-1">
                       <dt class="text-sm font-medium text-gray-500">Country</dt>
                       <dd class="mt-1 text-sm text-gray-900">{currentUser.country}</dd>
                     </div>
-
                     <div class="sm:col-span-1">
                       <dt class="text-sm font-medium text-gray-500">Email</dt>
                       <dd class="mt-1 text-sm text-gray-900">

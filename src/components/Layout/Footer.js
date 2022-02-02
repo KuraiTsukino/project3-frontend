@@ -5,7 +5,6 @@ export default function Footer() {
 	<div class="h-10 bg-blue-500">
       <footer className="bg-white">
         <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        
           <div className="mt-8 flex justify-center space-x-6">
             <a href="https://www.facebook.com/KuraiTsukinoPages/" className="text-gray-400 hover:text-gray-500">
               <span className="sr-only">Facebook</span>
